@@ -164,6 +164,7 @@ void TM1637::coding(int8_t DispData[])
   for(uint8_t i = 0;i < 4;i ++)
   {
     if(DispData[i] == 0x7f)DispData[i] = 0x00;
+    else if(DispData[i] == 0x7e)DispData[i] = 0x40;  //0x7e -> "-"
     else DispData[i] = TubeTab[DispData[i]] + PointData;
   }
 }
